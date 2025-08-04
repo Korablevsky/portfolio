@@ -26,9 +26,9 @@ export default function Home() {
         <motion.div {...fadeInUp}>
           <Experience />
         </motion.div>
-        <motion.div {...fadeInUp}>
+        {/* <motion.div {...fadeInUp}>
           <Skills />
-        </motion.div>
+        </motion.div> */}
         <motion.div {...fadeInUp}>
           <Portfolio />
         </motion.div>

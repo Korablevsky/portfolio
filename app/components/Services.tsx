@@ -261,30 +261,37 @@ export default function Services() {
 						animate={{ y: 0, opacity: 1 }}
 						transition={{ duration: 0.5, delay: index * 0.1 }}
 					>
-						<Card className='h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg hover:shadow-lg transition-shadow'>
+						<Card className='h-full bg-gray-800/50  backdrop-blur-lg hover:shadow-lg transition-shadow flex flex-col'>
 							<CardHeader className=' p-3 px-5 flex flex-row gap-3'>
-								<div className='w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center '>
+								<div className='w-12 h-12 rounded-full bg-indigo-800 flex items-center justify-center '>
 									<service.icon className='w-6 h-6 text-purple-600 dark:text-purple-400' />
 								</div>
 								<CardTitle className='text-xl mb-2'>{service.title}</CardTitle>
 							</CardHeader>
-							<CardContent className='flex flex-col '>
+							<CardContent className='flex flex-col flex-1'>
 								{service.schema}
 								<p className='mb-4 text-gray-600 dark:text-gray-400'>
 									{service.description}
 								</p>
 								<div className='flex flex-wrap gap-2 mb-4'>
 									{service.features.map((feature, i) => (
-										<Badge key={i} variant='secondary'>
+										<Badge
+											key={i}
+											className='bg-indigo-600/80'
+											variant='secondary'
+										>
 											{feature}
 										</Badge>
 									))}
 								</div>
-								<div className='flex items-center justify-between '>
-									<span className='text-lg font-bold text-purple-600 dark:text-purple-400'>
+								<div className='flex items-center justify-between mt-auto'>
+									<span className='text-lg font-bold text-white '>
 										{service.price}
 									</span>
-									<Button variant='outline'>
+									<Button
+										className='bg-purple-600/80 hover:bg-purple-600/90'
+										variant='outline'
+									>
 										<Link href='https://t.me/korablevsky'>Заказать</Link>
 									</Button>
 								</div>

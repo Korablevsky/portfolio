@@ -18,7 +18,6 @@ export default function Header() {
   const menuItems = [
     { href: "#about", label: "Обо мне" },
     { href: "#experience", label: "Опыт" },
-    { href: "#skills", label: "Навыки" },
     { href: "#portfolio", label: "Портфолио" },
     { href: "#contact", label: "Контакты" }
   ]
@@ -33,7 +32,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <motion.a 
           href="/"
-          className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text"
+          className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 t bg-clip-text"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

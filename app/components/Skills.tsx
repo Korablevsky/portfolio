@@ -49,7 +49,7 @@ export default function Skills() {
 			>
 				Навыки
 			</motion.h2>
-			<Card className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg'>
+			<Card className='bg-gray-800/50  backdrop-blur-lg'>
 				<CardContent className='p-6'>
 					<Tabs defaultValue='advanced' className='w-full'>
 						<TabsContent value='advanced'>

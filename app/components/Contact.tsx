@@ -16,7 +16,7 @@ export default function Contact() {
 			>
 				Связаться со мной
 			</motion.h2>
-			<Card className='bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg'>
+			<Card className='bg-gray-800/50  backdrop-blur-lg'>
 				<CardContent className='p-6'>
 					<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
 						<motion.div
@@ -32,22 +32,22 @@ export default function Contact() {
 									href='mailto:korablev.m56@gmail.com'
 									className='flex items-center'
 								>
-									<MailIcon className='h-5 w-5 mr-2 text-purple-500' />
+									<MailIcon className='h-5 w-5 mr-2 text-indigo-500' />
 									<span>korablev.m56@gmail.com</span>
 								</Link>
 								<Link
 									className='flex items-center'
 									href='https://t.me/korablevsky'
 								>
-									<Send className='h-5 w-5 mr-2 text-purple-500' />
+									<Send className='h-5 w-5 mr-2 text-indigo-500' />
 									<span>Telegram</span>
 								</Link>
 								<Link href='tel:+79534574099' className='flex items-center'>
-									<PhoneIcon className='h-5 w-5 mr-2 text-purple-500' />
+									<PhoneIcon className='h-5 w-5 mr-2 text-indigo-500' />
 									<span>+7 (953) 457-40-99</span>
 								</Link>
 								<div className='flex items-center'>
-									<MapPinIcon className='h-5 w-5 mr-2 text-purple-500' />
+									<MapPinIcon className='h-5 w-5 mr-2 text-indigo-500' />
 									<span>Россия</span>
 								</div>
 							</div>

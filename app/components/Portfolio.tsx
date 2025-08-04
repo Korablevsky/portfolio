@@ -19,16 +19,37 @@ export default function Portfolio() {
 
 	const projects = [
 		{
+			title: 'Dental Clinic',
+			description:
+				'Веб приложение стоматологии, реализован полный функцинал для работы с пациентами и документацией (desktop)',
+			image: '/portfolio/Dental.png',
+			details: 'Ссылка не доступна, так как этот проект используется клиникой',
+			technologies: [
+				'NEXT.js',
+				'TypeScript',
+				'React Query',
+				'TailwindCSS',
+				'FSD',
+				'RTK Query',
+				'Lexical',
+				'ShadcnUI',
+			],
+			github: '',
+			live: '',
+		},
+		{
 			title: 'Coffee Shop',
 			description:
-				'Веб приложение для продажи кофе, можно фильтровать по странам и сортам, делать поиск. (desktop / mobile)',
+				'Пет проект, есть бекенд, есть фронтенд, динамический роутинг, выстроенная архитектура FSD (desktop / mobile)',
 			image: '/portfolio/coffee.png',
 			details:
 				'Используется Next js (App Router), typeScript, FSD, Zustand, Tailwind CSS',
 			technologies: [
-				'Next js (App Router)',
-				'typeScript',
+				'NEXT.js',
+				'TypeScript',
 				'FSD',
+				'Prisma',
+				'ShadcnUI',
 				'Zustand',
 				'Tailwind CSS',
 			],
@@ -36,9 +57,46 @@ export default function Portfolio() {
 			live: 'https://coffee-alpha-one.vercel.app/',
 		},
 		{
+			title: 'Lawyers',
+			description:
+				'Проект, поиск юристов, занимаюсь им когда есть время, планирую SEO оптимизировать, добавить динамический роутинг и настроить прод (desktop / mobile)',
+			image: '/portfolio/lawyers.png',
+			details:
+				'Используется Next js (App Router), typeScript, FSD, Zustand, Tailwind CSS',
+			technologies: [
+				'NEXT.js',
+				'TypeScript',
+				'FSD',
+				'ShadcnUI',
+				'Zustand',
+				'Tailwind CSS',
+			],
+			github: 'https://github.com/Korablevsky/lawyer',
+			live: 'https://lawyer-ashen.vercel.app/',
+		},
+		{
+			title: 'Rukiwdom',
+			description:
+				'Проект, по подбору мастеров по дому, настроена СЕО-оптимизация, подключен Telegram API для сбора заявок (desktop / mobile)',
+			image: '/portfolio/rukiwdom.png',
+			details:
+				'Используется Next js (App Router), typeScript, FSD, Zustand, Tailwind CSS',
+			technologies: [
+				'NEXT.js',
+				'TypeScript',
+				'FSD',
+				'Telegram API',
+				'ShadcnUI',
+				'Zustand',
+				'Tailwind CSS',
+			],
+			github: 'https://github.com/Korablevsky/ruki-v-dom',
+			live: 'https://ruki-v-dom.vercel.app/',
+		},
+		{
 			title: 'RMT-development',
 			description:
-				'Веб приложение по поиску разработчиков (desktop). Настроена фильтрация, добавление в избранное, удаление из избранного',
+				'Веб приложение по поиску разработчиков. Настроена фильтрация, добавление в избранное, удаление из избранного (desktop)',
 			image: '/portfolio/rmt-dev.png',
 			details: 'Разработан с использованием React + TypeScript + Context',
 			technologies: ['React', 'TypeScript', 'Context', 'Radix UI'],
@@ -75,16 +133,6 @@ export default function Portfolio() {
 			github: 'https://github.com/Korablevsky/restorans',
 			live: 'https://korablevsky.github.io/restorans/',
 		},
-		{
-			title: 'Dental Clinic',
-			description:
-				'Сложное веб приложение для клиники, можно записаться на прием, перенести на другой день, удалить запись и так далее (desktop)',
-			image: '/portfolio/Dental.png',
-			details: 'Ссылка не доступна, так как этот проект используется клиникой',
-			technologies: ['Nextjs', 'typeScript', 'Tailwind CSS', 'FSD', 'Redux'],
-			github: '',
-			live: '',
-		},
 	]
 
 	return (
@@ -104,26 +152,31 @@ export default function Portfolio() {
 						initial={{ y: 50, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}
 						transition={{ duration: 0.6, delay: index * 0.2 }}
+						className='h-full'
 					>
 						<Dialog>
 							<DialogTrigger asChild>
-								<Card className='cursor-pointer hover:shadow-lg transition-shadow overflow-hidden bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg'>
-									<CardContent className='p-0'>
+								<Card className='cursor-pointer hover:shadow-lg transition-shadow overflow-hidden bg-gray-800/50 backdrop-blur-lg h-full flex flex-col'>
+									<CardContent className='p-0 flex flex-col h-full'>
 										<img
 											src={project.image}
 											alt={project.title}
-											className='w-full h-48 object-cover'
+											className='w-full h-48 object-cover flex-shrink-0'
 										/>
-										<div className='p-4'>
-											<h3 className='text-lg font-semibold mb-2'>
+										<div className='p-4 flex flex-col flex-grow'>
+											<h3 className='text-lg font-semibold text-indigo-400 mb-2'>
 												{project.title}
 											</h3>
-											<p className='text-sm text-muted-foreground mb-4'>
+											<p className='text-sm text-muted-foreground mb-4 flex-grow'>
 												{project.description}
 											</p>
-											<div className='flex flex-wrap gap-2'>
+											<div className='flex flex-wrap gap-2 mt-auto'>
 												{project.technologies.map((tech, i) => (
-													<Badge key={i} variant='secondary'>
+													<Badge
+														key={i}
+														className='bg-indigo-600/80'
+														variant='secondary'
+													>
 														{tech}
 													</Badge>
 												))}
